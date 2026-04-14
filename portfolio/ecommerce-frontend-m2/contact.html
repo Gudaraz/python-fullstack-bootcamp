@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contacto — Abyssal Relics. Consúltanos sobre nuestras reliquias malditas." />
+  <title>Contacto — Abyssal Relics</title>
+
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <!-- Bootstrap Icons (CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       HEADER / NAVBAR
+       ============================================================ -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-abyssal" aria-label="Navegación principal">
+      <div class="container">
+
+        <a class="navbar-brand navbar-brand-title" href="index.html">
+          Abyssal Relics
+          <span class="navbar-brand-subtitle">Antigüedades del Más Allá</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Abrir menú de navegación"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Catálogo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cart.html">
+                <span class="cart-icon-wrapper">
+                  <i class="bi bi-bag-heart"></i>
+                  <span
+                    id="cart-badge"
+                    class="badge"
+                    aria-label="Artículos en el carrito"
+                  >0</span>
+                </span>
+                <span class="ms-1">Carrito</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="contact.html">Contacto</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       MAIN
+       ============================================================ -->
+  <main>
+
+    <!-- Page Hero -->
+    <section class="page-hero" aria-label="Título de la sección">
+      <div class="container">
+        <h1 class="mb-0">Contacto</h1>
+        <div class="gold-line"></div>
+        <p class="text-muted" style="font-size:0.85rem;">
+          ¿Tienes preguntas sobre una reliquia? ¿Una maldición que necesita cancelación?
+          Escríbenos. Respondemos en menos de una luna llena.
+        </p>
+      </div>
+    </section>
+
+    <!-- Formulario y datos de contacto -->
+    <section class="py-4 pb-5" aria-label="Formulario de contacto">
+      <div class="container">
+        <div class="row g-5">
+
+          <!-- Formulario -->
+          <div class="col-12 col-lg-7">
+            <form
+              id="contact-form"
+              novalidate
+              aria-label="Formulario de contacto"
+            >
+              <div class="mb-4">
+                <label for="contact-name" class="form-label contact-label">
+                  Tu Nombre (o alias)
+                </label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  class="form-control contact-input"
+                  placeholder="Ej: Dean Corso, Van Helsing..."
+                  required
+                  autocomplete="name"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label for="contact-email" class="form-label contact-label">
+                  Correo Electrónico
+                </label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  class="form-control contact-input"
+                  placeholder="tu@correo.dark"
+                  required
+                  autocomplete="email"
+                />
+              </div>
+
+              <div class="mb-4">
+                <label for="contact-subject" class="form-label contact-label">
+                  Asunto
+                </label>
+                <select
+                  id="contact-subject"
+                  name="subject"
+                  class="form-select contact-input"
+                >
+                  <option value="">Selecciona un asunto...</option>
+                  <option value="consulta">Consulta sobre una reliquia</option>
+                  <option value="maldicion">Cancelación de maldición</option>
+                  <option value="envio">Información de envío</option>
+                  <option value="devolucion">Devoluciones (política de almas)</option>
+                  <option value="otro">Otro asunto oscuro</option>
+                </select>
+              </div>
+
+              <div class="mb-4">
+                <label for="contact-message" class="form-label contact-label">
+                  Mensaje
+                </label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  class="form-control contact-input"
+                  rows="5"
+                  placeholder="Escribe tu consulta aquí..."
+                  required
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-gold px-4 py-2"
+                id="contact-submit"
+              >
+                <i class="bi bi-send me-2"></i>Enviar Mensaje
+              </button>
+
+              <!-- Feedback del formulario -->
+              <div id="form-feedback" class="mt-3" aria-live="polite"></div>
+            </form>
+          </div>
+
+          <!-- Datos de contacto -->
+          <aside class="col-12 col-lg-5" aria-label="Información de contacto">
+            <div class="contact-info-box">
+              <h2 class="contact-info-title">Encuéntranos</h2>
+              <div class="gold-line mb-4"></div>
+
+              <ul class="contact-info-list">
+                <li>
+                  <i class="bi bi-geo-alt contact-icon"></i>
+                  <div>
+                    <strong>Dirección</strong><br />
+                    Callejón de los Susurros 13<br />
+                    Praga, República Oscura
+                  </div>
+                </li>
+                <li>
+                  <i class="bi bi-clock contact-icon"></i>
+                  <div>
+                    <strong>Horario</strong><br />
+                    Lunes a Viernes: 18:00 – 03:00<br />
+                    Sábado: 21:00 – amanecer<br />
+                    <em>Cerrado durante eclipses solares</em>
+                  </div>
+                </li>
+                <li>
+                  <i class="bi bi-envelope contact-icon"></i>
+                  <div>
+                    <strong>Email</strong><br />
+                    relics@abyssal.dark
+                  </div>
+                </li>
+                <li>
+                  <i class="bi bi-telephone contact-icon"></i>
+                  <div>
+                    <strong>Teléfono</strong><br />
+                    +666 000 000
+                  </div>
+                </li>
+              </ul>
+
+              <div class="contact-note mt-4">
+                <i class="bi bi-info-circle me-2"></i>
+                <em>
+                  Para consultas urgentes relacionadas con posesiones demoníacas activas,
+                  por favor llame directo. No usamos chatbots. Solo espíritus entrenados.
+                </em>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer>
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-12 col-md-4">
+          <p class="footer-brand">Abyssal Relics</p>
+          <p class="footer-tagline">Desde el Más Allá para ti</p>
+          <p class="mt-2" style="font-size:0.8rem;">
+            Fundada en 1313 en los sótanos de Praga. Enviamos a cualquier plano de existencia.
+          </p>
+        </div>
+        <div class="col-6 col-md-2">
+          <p class="footer-heading">Tienda</p>
+          <ul class="footer-links">
+            <li><a href="index.html">Catálogo</a></li>
+            <li><a href="cart.html">Carrito</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <p class="footer-heading">Categorías</p>
+          <ul class="footer-links">
+            <li><a href="#">Grimorios</a></li>
+            <li><a href="#">Arte Maldito</a></li>
+            <li><a href="#">Kits de Caza</a></li>
+            <li><a href="#">Artefactos</a></li>
+            <li><a href="#">Amuletos</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-3">
+          <p class="footer-heading">Contacto</p>
+          <ul class="footer-links">
+            <li><i class="bi bi-envelope me-1"></i> relics@abyssal.dark</li>
+            <li><i class="bi bi-telephone me-1"></i> +666 000 000</li>
+            <li><i class="bi bi-geo-alt me-1"></i> Callejón de los Susurros 13, Praga</li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-copy">
+        © MCCCXIII – Abyssal Relics · Todos los derechos reservados en este plano y en los adyacentes
+      </p>
+    </div>
+  </footer>
+
+  <!-- TOAST -->
+  <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index:9999;">
+    <div
+      id="cart-toast"
+      class="toast toast-abyssal"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+    >
+      <div class="toast-header">
+        <i class="bi bi-bag-check me-2"></i>
+        <strong class="me-auto">Carrito</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+      </div>
+      <div class="toast-body" id="toast-message">Listo.</div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle (CDN) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmGA5XB12L6FS5RoGvhGNjJwYWel"
+    crossorigin="anonymous"
+  ></script>
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- Script del formulario de contacto -->
+  <script>
+    /**
+     * Manejo del formulario de contacto.
+     * NOTA PARA BACKEND: Reemplazar este handler por fetch("POST /api/contact", { body })
+     */
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name    = document.getElementById("contact-name").value.trim();
+      const email   = document.getElementById("contact-email").value.trim();
+      const message = document.getElementById("contact-message").value.trim();
+      const feedback = document.getElementById("form-feedback");
+
+      if (!name || !email || !message) {
+        feedback.innerHTML = `
+          <div class="alert" style="background:var(--color-crimson);color:#fff;border:none;font-size:0.85rem;">
+            Por favor completa los campos obligatorios.
+          </div>
+        `;
+        return;
+      }
+
+      // Simular envío exitoso
+      feedback.innerHTML = `
+        <div class="alert" style="background:var(--color-gold-dark);color:#000;border:none;font-size:0.85rem;">
+          <i class="bi bi-check-circle me-2"></i>
+          Tu mensaje fue enviado al abismo. Responderemos antes de la próxima luna llena.
+        </div>
+      `;
+      document.getElementById("contact-form").reset();
+    });
+  </script>
+
+  <!-- Estilos adicionales de la página de contacto -->
+  <style>
+    .contact-label {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-input {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      color: var(--color-text);
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      padding: 0.65rem 1rem;
+      transition: border-color var(--transition);
+    }
+
+    .contact-input:focus {
+      background-color: var(--color-surface-2);
+      border-color: var(--color-gold-dark);
+      color: var(--color-text);
+      box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+    }
+
+    .contact-input option {
+      background-color: var(--color-surface);
+    }
+
+    .contact-info-box {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+
+    .contact-info-title {
+      font-size: 1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+    }
+
+    .contact-info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .contact-info-list li {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
+
+    .contact-icon {
+      font-size: 1.2rem;
+      color: var(--color-gold-dark);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .contact-note {
+      background-color: var(--color-surface-2);
+      border-left: 2px solid var(--color-gold-dark);
+      padding: 0.75rem 1rem;
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+  </style>
+
+</body>
+</html>

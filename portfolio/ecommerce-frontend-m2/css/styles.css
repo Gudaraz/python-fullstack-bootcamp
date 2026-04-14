@@ -1,0 +1,644 @@
+/* ================================================================
+   styles.css — Abyssal Relics Dark Theme
+   Paleta: negro profundo / dorado envejecido / granate oscuro
+   ================================================================ */
+
+/* --- Variables de diseño --- */
+:root {
+  --color-bg:         #0d0d0d;
+  --color-surface:    #161616;
+  --color-surface-2:  #1e1e1e;
+  --color-border:     #2c2c2c;
+  --color-gold:       #c9a84c;
+  --color-gold-light: #e8c96a;
+  --color-gold-dark:  #8a6f2e;
+  --color-crimson:    #7a1a1a;
+  --color-text:       #e0d8cc;
+  --color-text-muted: #7a7068;
+  --font-display:     'Cinzel', serif;
+  --font-body:        'EB Garamond', serif;
+  --transition:       0.25s ease;
+  --radius:           4px;
+}
+
+/* --- Reset y base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* --- Tipografía --- */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+  color: var(--color-gold);
+}
+
+.text-gold { color: var(--color-gold) !important; }
+
+/* ================================================================
+   NAVBAR
+   ================================================================ */
+.navbar-abyssal {
+  background-color: rgba(10, 10, 10, 0.97);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.75rem 0;
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+.navbar-brand-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--color-gold) !important;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.navbar-brand-subtitle {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  display: block;
+}
+
+.navbar-nav .nav-link {
+  color: var(--color-text) !important;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem !important;
+  transition: color var(--transition);
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--color-gold) !important;
+}
+
+.navbar-toggler {
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* Icono del carrito y badge */
+.cart-icon-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+#cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: var(--color-gold);
+  color: #000;
+  font-size: 0.65rem;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+}
+
+/* ================================================================
+   HERO (Home)
+   ================================================================ */
+.hero {
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 13, 13, 0.2) 0%,
+    rgba(13, 13, 13, 1) 100%
+  ),
+  repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(201, 168, 76, 0.02) 2px,
+    rgba(201, 168, 76, 0.02) 4px
+  );
+  text-align: center;
+  padding: 4rem 1rem 3rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero-title {
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 40px rgba(201, 168, 76, 0.25);
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-family: var(--font-display);
+}
+
+.hero-divider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+  margin: 1.5rem auto;
+}
+
+/* ================================================================
+   SECCIÓN DE PRODUCTOS
+   ================================================================ */
+.section-title {
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-family: var(--font-display);
+}
+
+/* ================================================================
+   PRODUCT CARDS
+   ================================================================ */
+.product-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-gold-dark);
+  box-shadow: 0 8px 32px rgba(201, 168, 76, 0.08);
+}
+
+.card-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  filter: brightness(0.9);
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.04);
+  filter: brightness(1);
+}
+
+.badge-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--color-gold-dark);
+  color: var(--color-bg);
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  padding: 0.3em 0.7em;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.product-category {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.product-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.product-short-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.product-price {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--color-gold);
+  letter-spacing: 0.05em;
+}
+
+.card-footer {
+  background-color: var(--color-surface-2);
+  border-top: 1px solid var(--color-border);
+  padding: 0.75rem 1.25rem;
+}
+
+/* ================================================================
+   BOTONES
+   ================================================================ */
+.btn-gold {
+  background-color: var(--color-gold-dark);
+  color: var(--color-bg);
+  border: 1px solid var(--color-gold-dark);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  transition: background-color var(--transition), box-shadow var(--transition);
+  padding: 0.5rem 1rem;
+}
+
+.btn-gold:hover, .btn-gold:focus {
+  background-color: var(--color-gold);
+  color: #000;
+  box-shadow: 0 0 12px rgba(201, 168, 76, 0.3);
+}
+
+.btn-outline-gold {
+  background-color: transparent;
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold-dark);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  transition: all var(--transition);
+  padding: 0.5rem 1rem;
+}
+
+.btn-outline-gold:hover, .btn-outline-gold:focus {
+  background-color: var(--color-gold-dark);
+  color: var(--color-bg);
+  border-color: var(--color-gold);
+}
+
+/* ================================================================
+   DETALLE DE PRODUCTO
+   ================================================================ */
+.detail-img-wrapper {
+  position: relative;
+}
+
+.detail-img {
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  width: 100%;
+}
+
+.badge-detail {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: var(--color-gold-dark);
+  color: var(--color-bg);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  padding: 0.35em 0.8em;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+.detail-title {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.detail-desc {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.detail-price {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  color: var(--color-gold);
+}
+
+.stock-info {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+/* ================================================================
+   CARRITO
+   ================================================================ */
+.cart-item {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  transition: border-color var(--transition);
+}
+
+.cart-item:hover {
+  border-color: var(--color-gold-dark);
+}
+
+.cart-item-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.cart-item-name {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  margin-bottom: 0.2rem;
+}
+
+.cart-item-price {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.cart-item-subtotal {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--color-gold);
+  white-space: nowrap;
+  min-width: 80px;
+  text-align: right;
+}
+
+/* Controles de cantidad */
+.qty-controls { white-space: nowrap; }
+
+.btn-qty {
+  background-color: var(--color-surface-2);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  font-size: 1.1rem;
+  line-height: 1;
+  border-radius: 2px;
+  transition: background-color var(--transition);
+}
+
+.btn-qty:hover {
+  background-color: var(--color-gold-dark);
+  color: var(--color-bg);
+}
+
+.qty-value {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  min-width: 24px;
+  text-align: center;
+  color: var(--color-text);
+}
+
+.btn-remove {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 2px;
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+
+.btn-remove:hover {
+  background-color: var(--color-crimson);
+  border-color: var(--color-crimson);
+  color: #fff;
+}
+
+/* Resumen del carrito */
+.summary-box {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  position: sticky;
+  top: 90px;
+}
+
+.summary-title {
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  color: var(--color-gold);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.summary-total {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.summary-divider {
+  border-color: var(--color-border);
+  margin: 1rem 0;
+}
+
+/* Carrito vacío */
+.empty-cart-icon {
+  font-size: 4rem;
+  color: var(--color-text-muted);
+  display: block;
+}
+
+/* ================================================================
+   TOAST
+   ================================================================ */
+.toast-abyssal {
+  background-color: var(--color-surface-2);
+  border: 1px solid var(--color-gold-dark);
+  color: var(--color-text);
+}
+
+.toast-abyssal .toast-header {
+  background-color: var(--color-gold-dark);
+  color: var(--color-bg);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  border-bottom: none;
+}
+
+.toast-abyssal .btn-close {
+  filter: invert(1);
+}
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+footer {
+  background-color: rgba(10, 10, 10, 0.98);
+  border-top: 1px solid var(--color-border);
+  padding: 2.5rem 0 1.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--color-gold);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.footer-tagline {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.footer-heading {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li { margin-bottom: 0.4rem; }
+
+.footer-links a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footer-links a:hover { color: var(--color-gold); }
+
+.footer-copy {
+  border-top: 1px solid var(--color-border);
+  margin-top: 2rem;
+  padding-top: 1rem;
+  font-size: 0.75rem;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-family: var(--font-display);
+  letter-spacing: 0.1em;
+}
+
+/* ================================================================
+   PÁGINA DE TÍTULO (breadcrumb + hero pequeño)
+   ================================================================ */
+.page-hero {
+  padding: 2.5rem 0 2rem;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 2rem;
+}
+
+.page-hero h1 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/* ================================================================
+   UTILIDADES VARIAS
+   ================================================================ */
+.gold-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, var(--color-gold), transparent);
+  margin: 1rem 0;
+}
+
+/* ================================================================
+   RESPONSIVE — ajustes específicos móvil (≤420px)
+   ================================================================ */
+@media (max-width: 420px) {
+  .hero-title   { font-size: 1.8rem; }
+  .product-img  { height: 160px; }
+
+  .cart-item {
+    flex-wrap: wrap;
+  }
+
+  .cart-item-img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .cart-item-subtotal {
+    min-width: auto;
+    font-size: 0.9rem;
+  }
+
+  .summary-box {
+    position: static;
+  }
+
+  .detail-title { font-size: 1.3rem; }
+}

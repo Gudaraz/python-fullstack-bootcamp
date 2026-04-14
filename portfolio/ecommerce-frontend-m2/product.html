@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Detalle de reliquia — Abyssal Relics." />
+  <title>Reliquia — Abyssal Relics</title>
+
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <!-- Bootstrap Icons (CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       HEADER / NAVBAR
+       ============================================================ -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-abyssal" aria-label="Navegación principal">
+      <div class="container">
+
+        <a class="navbar-brand navbar-brand-title" href="index.html">
+          Abyssal Relics
+          <span class="navbar-brand-subtitle">Antigüedades del Más Allá</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Abrir menú de navegación"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Catálogo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cart.html">
+                <span class="cart-icon-wrapper">
+                  <i class="bi bi-bag-heart"></i>
+                  <span
+                    id="cart-badge"
+                    class="badge"
+                    aria-label="Artículos en el carrito"
+                  >0</span>
+                </span>
+                <span class="ms-1">Carrito</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contacto</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============================================================
+       MAIN
+       ============================================================ -->
+  <main>
+
+    <!-- Breadcrumb -->
+    <section class="page-hero" aria-label="Ruta de navegación">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb" style="font-family:var(--font-display);font-size:0.75rem;letter-spacing:0.1em;">
+            <li class="breadcrumb-item">
+              <a href="index.html" style="color:var(--color-text-muted);">Catálogo</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page" style="color:var(--color-gold);">
+              Detalle
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Detalle del producto — renderizado por JS con renderProductDetail() -->
+    <section class="py-4 pb-5" aria-label="Detalle del producto">
+      <div class="container">
+        <div class="row g-4 g-lg-5" id="product-detail">
+          <!-- Contenido generado por renderProductDetail() en app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección "También podría interesarte" (estática, decorativa) -->
+    <section class="py-4" style="border-top:1px solid var(--color-border);" aria-label="Productos relacionados">
+      <div class="container">
+        <p class="section-title mb-1">También del Abismo</p>
+        <div class="gold-line mb-4"></div>
+        <div class="row g-3" id="related-products">
+          <!-- Podrían cargarse con JS filtrando por categoría -->
+          <div class="col-12 text-center text-muted" style="font-size:0.85rem;">
+            <em>Los espíritus están seleccionando otras reliquias para ti…</em>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer>
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-12 col-md-4">
+          <p class="footer-brand">Abyssal Relics</p>
+          <p class="footer-tagline">Desde el Más Allá para ti</p>
+          <p class="mt-2" style="font-size:0.8rem;">
+            Fundada en 1313 en los sótanos de Praga. Enviamos a cualquier plano de existencia.
+          </p>
+        </div>
+        <div class="col-6 col-md-2">
+          <p class="footer-heading">Tienda</p>
+          <ul class="footer-links">
+            <li><a href="index.html">Catálogo</a></li>
+            <li><a href="cart.html">Carrito</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <p class="footer-heading">Categorías</p>
+          <ul class="footer-links">
+            <li><a href="#">Grimorios</a></li>
+            <li><a href="#">Arte Maldito</a></li>
+            <li><a href="#">Kits de Caza</a></li>
+            <li><a href="#">Artefactos</a></li>
+            <li><a href="#">Amuletos</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-3">
+          <p class="footer-heading">Contacto</p>
+          <ul class="footer-links">
+            <li><i class="bi bi-envelope me-1"></i> relics@abyssal.dark</li>
+            <li><i class="bi bi-telephone me-1"></i> +666 000 000</li>
+            <li><i class="bi bi-geo-alt me-1"></i> Callejón de los Susurros 13, Praga</li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-copy">
+        © MCCCXIII – Abyssal Relics · Todos los derechos reservados en este plano y en los adyacentes
+      </p>
+    </div>
+  </footer>
+
+  <!-- TOAST -->
+  <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index:9999;">
+    <div
+      id="cart-toast"
+      class="toast toast-abyssal"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+    >
+      <div class="toast-header">
+        <i class="bi bi-bag-check me-2"></i>
+        <strong class="me-auto">Carrito</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+      </div>
+      <div class="toast-body" id="toast-message">
+        Producto agregado.
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle (CDN) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmGA5XB12L6FS5RoGvhGNjJwYWel"
+    crossorigin="anonymous"
+  ></script>
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
