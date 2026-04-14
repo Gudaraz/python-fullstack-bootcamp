@@ -2,8 +2,8 @@
 
 > Tienda de antigüedades malditas, grimorios, artefactos sobrenaturales y reliquias del más allá.
 
-🔗 **Repositorio GitHub:** `https://github.com/TU_USUARIO/ecommerce-frontend-m2`
-*(Reemplaza `TU_USUARIO` con tu nombre de usuario de GitHub antes de entregar)*
+🔗 **Repositorio GitHub:** `https://github.com/gudaraz/ecommerce-frontend-m2`
+
 
 ---
 
